@@ -10,7 +10,7 @@ import {connect} from "./database";
 import AppRouter from './router';
 
 //File store config
-const storageDir = path.join(__dirname, '..', 'storage');
+const storageDir = path.join(__dirname, '..', 'storageDir');
 const storageConfig = multer.diskStorage({
   destination:(req, file, cb) =>{
     cb(null, 'storageDir')
