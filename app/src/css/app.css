@@ -1,0 +1,184 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300i,400,800";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1;
+  background: rgba(27, 101, 246, 1);
+  color: rgba(150, 163, 187, 1);
+  font-size: 13px;
+}
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*{
+  box-sizing: border-box;
+}
+
+
+.app-layout{
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 100px 50px 50px 50px;
+
+}
+
+.app-container{
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header{
+  float: left;
+  color:#FFFFFF;
+}
+
+.app-content{
+  float: right;
+}
+
+.app-site-info{
+  color:#FFFFFF;
+}
+
+.site-title{
+  margin: 20px 0 0 0 ;
+  padding: 0;
+  font-size: 50px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, .9);
+}
+
+.site-slogan{
+  margin-top:5px;
+  padding: 0;
+  font-size:30px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, .6);
+}
+
+h1{
+  margin :0;
+  padding:0;
+  font-size:60px;
+  font-weight: 800;
+}
+
+.app-content{
+  background: #FFFFFF;
+  width:350px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius: 5px;
+}
+
+.app-card{
+  overflow: hidden;
+  position: relative;
+  background: #FFFFFF;
+  width:350px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius: 5px;
+}
+
+.app-card-header{
+  background: rgba(243, 247, 255, 1);
+}
+
+.app-card-header-inner{
+  padding: 20px;
+}
+
+.app-card-content-inner{
+  padding: 20px;
+}
+
+.app-file-select-zone{
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.label1{
+  display: block;
+  width: 100%;
+}
+
+.input1{
+  position: fixed;
+  top: -9999px;
+}
+
+.app-upload-description{
+  font-size: 12px;
+  display: block;
+}
+
+.app-upload-icon{
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 70px;
+  height: 40px;
+  border:  1px dashed rgba(150, 163, 187, 1);
+}
+
+.app-form-item{
+  margin:0 0 15px 0;
+}
+
+.label2 .label3 .label4{
+  text-transform: uppercase;
+  display: block;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.input2[type='text'] , .input3[type='text'] , .textarea1{
+  width: 100%;
+  border: 1px solid rgba(224, 224, 224, 1);
+  outline: 0 none;
+  padding: 8px;
+}
+
+.input2 , .input3 , .textarea1 , :focus{
+  outline: 0 none;
+}
+
+.input2 , .input3 , .textarea1 :active{
+  outline: 0 none;
+}
+
+.textarea1{
+  min-height: 50px;
+}
