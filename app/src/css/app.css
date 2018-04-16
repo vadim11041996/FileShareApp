@@ -196,3 +196,20 @@ h1{
   border-radius: 5px;
   padding: 10px 15px;
 }
+
+.app-files-selected{
+  background: #FFFFFF;
+  position: relative;
+  margin: -20px -20px 20px -20px;
+  padding: 20px;
+}
+
+.app-files-selected-item{
+  border-bottom:1px solid rgba(0, 0, 0, 0.09);
+  display: flex;
+  padding: 10px 0;
+}
+
+.filename{
+  flex-grow: 1;
+}

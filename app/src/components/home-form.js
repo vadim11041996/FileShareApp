@@ -32,7 +32,7 @@ export default class HomeForm extends Component{
     _.each(_.get(event, 'target.files', []), (file) =>{
       files.push(file);
     });
-
+    console.log('file ssagsa',files);
     this.setState({
       form:{
           ...this.state.form,
@@ -129,12 +129,28 @@ export default class HomeForm extends Component{
 
   render(){
     const {form} = this.state;
+    const {files} = form;
 
     return(
       <div className={'app-card'}>
         <form onSubmit={this._onSubmit}>
           <div className={'app-card-header'}>
             <div className={'app-card-header-inner'}>
+              {
+                files.length ? <div className={'app-files-selected'}>
+                {
+                  files.map((file, index) =>{
+                    return(
+                      <div key={index} className={'app-files-selected-item'}>
+                        <div className={'filename'}>{file.name}</div>
+                        <div className={'file-action'}>X</div>
+                      </div>
+                    )
+                  })
+                }
+                </div> : null
+              }
+
               <div className={'app-file-select-zone'}>
                 <label className={"label1"} htmlFor={'input-file'}>
                   <input onChange={this._onFileAdded} className={"input1"} id={'input-file'} type='file' multiple={true} />
