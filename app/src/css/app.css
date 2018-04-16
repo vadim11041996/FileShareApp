@@ -182,3 +182,17 @@ h1{
 .textarea1{
   min-height: 50px;
 }
+
+.app-button{
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-weight: 800;
+  color: rgba(150, 163, 187, 1);
+  border: 1px solid rgba(150, 163, 187, 1);
+  background: #FFFFFF;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
