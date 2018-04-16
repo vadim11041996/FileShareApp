@@ -56,15 +56,20 @@ table {
 .app-container{
   position: relative;
   overflow: hidden;
+  padding: 20px 0 0 0 ;
 }
 
 .app-header{
   float: left;
   color:#FFFFFF;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 .app-content{
   float: right;
+
 }
 
 .app-site-info{
@@ -198,6 +203,9 @@ h1{
 }
 
 .app-files-selected{
+  max-height: 150px;
+  position: relative;
+  overflow-y: auto;
   background: #FFFFFF;
   position: relative;
   margin: -20px -20px 20px -20px;
@@ -212,4 +220,16 @@ h1{
 
 .filename{
   flex-grow: 1;
+}
+
+.app-file-remove{
+  border: 0 none;
+  padding: 3px;
+  font-size: 14px;
+  font-weight: 300;
+  background: none;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
 }

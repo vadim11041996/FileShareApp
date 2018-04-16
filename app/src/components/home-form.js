@@ -25,10 +25,23 @@ export default class HomeForm extends Component{
     this._onSubmit = this._onSubmit.bind(this);
     this._formValidation = this._formValidation.bind(this);
     this._onFileAdded = this._onFileAdded.bind(this);
+    this._onFileRemove = this._onFileRemove.bind(this);
+  }
+
+  _onFileRemove(key){
+    let {files} = this.state.form;
+    files.splice(key, 1);
+
+    this.setState({
+      form:{
+        ...this.state.form,
+        files: files
+      }
+    })
   }
 
   _onFileAdded(event){
-    let files = [];
+    let files = _.get(this.state, 'form.files', []);
     _.each(_.get(event, 'target.files', []), (file) =>{
       files.push(file);
     });
@@ -143,7 +156,7 @@ export default class HomeForm extends Component{
                     return(
                       <div key={index} className={'app-files-selected-item'}>
                         <div className={'filename'}>{file.name}</div>
-                        <div className={'file-action'}>X</div>
+                        <div className={'file-action'}><button onClick={()=> this._onFileRemove(index)} type={'button'} className={'app-file-remove'}>X</button></div>
                       </div>
                     )
                   })
@@ -154,8 +167,10 @@ export default class HomeForm extends Component{
               <div className={'app-file-select-zone'}>
                 <label className={"label1"} htmlFor={'input-file'}>
                   <input onChange={this._onFileAdded} className={"input1"} id={'input-file'} type='file' multiple={true} />
-                  <span className={'app-upload-icon'} />
-                  <span className={'app-upload-description'}>Drag and drop your files here.</span>
+                  {
+                    files.length ? <span className={'app-upload-description text-uppercase'}>Add more files</span> : <span><span className={'app-upload-icon'}/>
+                      <span className={'app-upload-description'}> Drag and drop your files here.</span></span>
+                  }
                 </label>
               </div>
 
