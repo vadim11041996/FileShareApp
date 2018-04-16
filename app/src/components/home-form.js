@@ -141,6 +141,7 @@ export default class HomeForm extends Component{
   }
 
   render(){
+    
     const {form} = this.state;
     const {files} = form;
 
