@@ -203,7 +203,7 @@ export default class HomeForm extends Component{
                 <input onChange={this._onTextChange} className={"input3"} name={'from'} placeholder={'Your email adress'} type={'text'} id={'from'} />
               </div>
 
-              <div className={classNames('app-form-item',{error: _.get(errors, 'message')})}>
+              <div className={'app-form-item'}>
                 <label className={"label4"} htmlFor={'message'}>Message</label>
                 <textarea onChange={this._onTextChange} className={"textarea1"} id={'message'} placeholder={'Add a note (optional)'} name={'message'}/>
               </div>
