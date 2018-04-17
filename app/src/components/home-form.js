@@ -193,7 +193,7 @@ export default class HomeForm extends Component{
           </div>
           <div className={'app-card-content'}>
             <div className={'app-card-content-inner'}>
-              <div className={'app-form-item'}>
+              <div className={classNames('app-form-item',{error:_.get(errors, 'to')})}>
                 <label className={"label2"} htmlFor={'to'}>Send to</label>
                 <input onChange={this._onTextChange} value={form.to} className={"input2"} name={'to'} placeholder={'Email adress'} type={'text'} id={'to'} />
               </div>
