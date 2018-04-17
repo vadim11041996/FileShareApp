@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import _ from 'lodash';
+import classNames from 'classnames';
 
 export default class HomeForm extends Component{
   constructor(props){
@@ -18,6 +19,7 @@ export default class HomeForm extends Component{
         to: null,
         from:null,
         message:null,
+        files:null,
 
       }
     };
@@ -51,6 +53,10 @@ export default class HomeForm extends Component{
           ...this.state.form,
           files: files,
       }
+    }, () => {
+      this._formValidation(['files'],(isValid) => {
+
+      });
     });
 
   // console.log('files', files);
@@ -61,7 +67,7 @@ export default class HomeForm extends Component{
       return emailRegex.test(emailAddress);
   }
 
-  _formValidation(fields = [], callback){
+  _formValidation(fields = [], callback = () => {}){
     let {form, errors} = this.state;
     const validations = {
 
@@ -91,6 +97,14 @@ export default class HomeForm extends Component{
           errorMessage:'Email is not valid',
           isValid:() =>{
             return this._isEmail(form.to);
+          }
+        }
+      ],
+      files: [
+        {
+          errorMessage: 'File is required',
+          isValid: () => {
+            return form.files.length
           }
         }
       ]
@@ -125,7 +139,7 @@ export default class HomeForm extends Component{
 
   _onSubmit(event){
     event.preventDefault();
-    this._formValidation(['from','to'], (isValid) =>{
+    this._formValidation(['from','to','files'], (isValid) =>{
       console.log('The form is valid?', isValid);
     });
   }
@@ -141,8 +155,8 @@ export default class HomeForm extends Component{
   }
 
   render(){
-    
-    const {form} = this.state;
+
+    const {form, errors} = this.state;
     const {files} = form;
 
     return(
@@ -165,7 +179,7 @@ export default class HomeForm extends Component{
                 </div> : null
               }
 
-              <div className={'app-file-select-zone'}>
+              <div className={classNames('app-file-select-zone',{'error': _.get(errors, 'files')})}>
                 <label className={"label1"} htmlFor={'input-file'}>
                   <input onChange={this._onFileAdded} className={"input1"} id={'input-file'} type='file' multiple={true} />
                   {

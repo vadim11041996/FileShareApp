@@ -233,3 +233,7 @@ h1{
 .text-uppercase{
   text-transform: uppercase;
 }
+
+.error{
+  color:rgba(208,21,46,1);
+}
